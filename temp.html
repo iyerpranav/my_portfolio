@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    rel="stylesheet">
+  <title>Pranav Iyer</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #13293D;
+      color: #FFFBFC;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .top-bar {
+      height: 60px;
+      background-color: #FFFBFC;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .top-bar .page-section {
+      color: #13293D;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .about-me-main {
+      margin-top: 5rem;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .pfp {
+      display: flex;
+      max-height: rem;
+      margin: 1rem 5rem;
+    }
+
+    .pfp-jpg {
+      flex: 1;
+      width: 50%;
+      border-radius: 100%;
+    }
+
+    .icon-tray {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .icon-tray img {
+      height: 1.5rem;
+      cursor: pointer;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .icon-tray img:hover {
+      transform: scale(1.2);
+      filter: brightness(0.8) invert(1);
+    }
+
+    .separator {
+      width: 80%;
+      margin: 2rem auto;
+      border: none;
+      height: 1px;
+      background-color: #FFFBFC;
+    }
+
+    .projects,
+    .technologies {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .projects h2,
+    .technologies h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .technologies h3 {
+      padding: 1rem 0;
+    }
+
+    .projects .project-item,
+    .technologies .tech-item {
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+
+    .contact {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      padding: 0.5rem;
+    }
+
+    .stack-item img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .stack-item img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (min-width: 768px) {
+      .top-bar .page-section {
+        font-size: 1rem;
+      }
+
+      .about-me-main {
+        font-size: 3rem;
+      }
+
+      .icon-tray img {
+        height: 2rem;
+      }
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column ;
+      gap: 1rem;
+    }
+
+    .project {
+      background: #FFFBFC;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .project h3 {
+      margin: 1rem 0rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #13293D;
+    }
+
+    .project p {
+      font-size: 1rem;
+      color: #13293D;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="top-bar">
+    <div class="page-section">Home</div>
+    <div class="page-section">About</div>
+    <div class="page-section">Projects</div>
+    <div class="page-section">Contact</div>
+  </nav>
+  <section class="about-me-main">
+    <div>Pranav Iyer</div>
+    <div style="font-size: 1rem; font-weight: 300;">Data Science Student</div>
+    <section class="pfp">
+      <img class="pfp-jpg" src="images/pfp_temp.jpg">
+    </section>
+  </section>
+  <section class="icon-tray">
+    <img src="icons/github-svgrepo-com.svg" alt="GitHub">
+    <img src="icons/linkedin-svgrepo-com.svg" alt="LinkedIn">
+    <img src="icons/linkedin-svgrepo-com.svg" alt="Portfolio">
+  </section>
+  <hr class="separator">
+  <section class="technologies">
+    <h2>Technologies</h2>
+    <div class="stack-grid">
+      <div class="stack-item"><img src="icons/python-127-svgrepo-com.svg"></div>
+      <div class="stack-item"><img src="icons/vscode-fill-svgrepo-com.svg"></div>
+      <div class="stack-item"><img src="icons/c-svgrepo-com.svg"></div>
+      <div class="stack-item"><img src="icons/cpp2-svgrepo-com (1)-cropped.svg"></div>
+      <div class="stack-item"><img src="icons/tableau-svgrepo-com.svg"></div>
+      <div class="stack-item"><img src="icons/excel-file-svgrepo-com.svg"></div>
+      <div class="stack-item"><img src="icons/html5-logo-svgrepo-com.svg"></div>
+      <div class="stack-item"><img src="icons/css-svgrepo-com (2)-cropped.svg"></div>
+    </div>
+  </section>
+  <hr class="separator">
+  <section class="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <img src="images/image_ffa.png" alt="Flight Network Max Flow Analysis">
+        <h3>Flight Network Max Flow Analysis</h3>
+        <p>Analyzed maximum passenger flow using the Ford-Fulkerson algorithm. Data cleaned and merged with Python, and
+          insights visualized using Tableau and Excel dashboards.</p>
+      </div>
+
+      <div class="project">
+        <img src="images/image_ptf.png" alt="Paper Trading Platform">
+        <h3>Paper Trading Platform</h3>
+        <p>A C++ based paper trading platform for simulating stock transactions with real-time stock price updates using
+          Python. Features user authentication, transaction management, and portfolio tracking.</p>
+      </div>
+    </div>
+  </section>
+  <hr class="separator">
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: iyerpranav11@gmail .com</p>
+    <p>Phone: +91 99874 01185</p>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+.top-bar {
+  background-color: #FFFBFC;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top-bar .page-section {
+  color: #13293D;
+  font-size: 50%;
+  font-weight: 700;
+  display: flex ;
+  justify-content: center;
+  flex: 1;
+}
