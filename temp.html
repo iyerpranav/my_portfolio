@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <title>Pranav Iyer</title>
   <style>
@@ -42,7 +41,9 @@
       background-color: #FFFBFC;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 20px;
       position: fixed;
       top: 0;
       left: 0;
@@ -51,57 +52,59 @@
       z-index: 1000;
     }
 
-    .top-bar .page-section {
+    .top-bar a {
       color: #13293D;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
-      cursor: pointer;
-      position: relative;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: color 0.3s ease, background 0.3s ease;
     }
 
-    .top-bar .page-section:hover::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: #13293D;
-      bottom: -5px;
-      left: 0;
+    .top-bar a:hover {
+      background: rgba(19, 41, 61, 0.1);
+      border-radius: 5px;
     }
 
-    /* Hero Section with Typing Animation */
-    /* Updated Hero Section */
+    /* Responsive Navbar - Adjust Spacing for Smaller Screens */
+    @media (max-width: 768px) {
+      .top-bar {
+        gap: 0px;
+      }
+
+      .top-bar a {
+        font-size: 0.5rem;
+        padding: 8px 10px;
+      }
+    }
+
+    /* Hero Section */
     .hero {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       width: 100%;
       background: linear-gradient(135deg, #0F1C2E, #1F456E);
       text-align: center;
-      padding: 40px ;
-      gap: 2rem;
+      padding: 40px;
     }
 
-    /* Profile Picture Styling */
     .profile-pic-container {
       display: flex;
       max-height: rem;
       margin: 1rem 1rem;
     }
 
-
     .profile-pic {
-      flex: 1;
-      width: 50%;
+      width: 150px;
       border-radius: 100%;
       border: 3px solid #FFFBFC;
+      margin-top: 1rem;
     }
 
-
-    /* Hero Text */
     .hero-text {
       display: flex;
       flex-direction: column;
@@ -115,65 +118,13 @@
       font-weight: 700;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .profile-pic {
-        width: 50%;
-        height: 50%;
-      }
-    }
-
-
-    .typing-container {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: #FFFBFC;
-      display: inline-block;
-      border-right: 2px solid white;
-      white-space: nowrap;
-      overflow: hidden;
-      width: fit-content;
-    }
-
-    .cursor {
-      display: inline-block;
-      animation: blink 0.7s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-
-    @keyframes typing {
-      from {
-        width: 0
-      }
-
-      to {
-        width: 100%
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent
-      }
-    }
-
     /* Icons Section */
     .icon-tray {
       display: flex;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-top: 1rem;
     }
 
     .icon-tray img {
@@ -244,7 +195,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 20px;
+    }
+
+    @media (min-width: 750px) {
+      .projects-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
     }
 
     .project {
@@ -292,37 +252,55 @@
     .contact {
       padding: 2rem;
       text-align: center;
+      background-color: #1F456E;
+      color: #FFFBFC;
+      border-radius: 10px;
+      margin-top: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .contact h2 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
       margin-bottom: 1rem;
+      color: #FFFBFC;
     }
 
     .contact p {
-      margin-bottom: 1rem;
       font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
+      color: #FFFBFC;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: #F7C948;
+      /* Highlight color */
     }
   </style>
 </head>
 
 <body>
   <nav class="top-bar">
-    <a href="#hero" class="page-section">Home</a>
-    <a href="#technologies" class="page-section">Technologies</a>
-    <a href="#projects" class="page-section">Projects</a>
-    <a href="#contact" class="page-section">Contact</a>
+    <a href="#hero">Home</a>
+    <a href="#technologies">Technologies</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-text">
       <h1>Hi, I'm Pranav Iyer</h1>
       <section class="profile-pic-container">
         <img class="profile-pic" src="images/pfp_temp.jpg" alt="Pranav Iyer">
       </section>
       <div class="typing-container">
-        <span id="typing-text"></span>
-        <span class="cursor"></span>
+        Data Science Student
       </div>
     </div>
     <section class="icon-tray">
@@ -332,12 +310,15 @@
       <a href="https://linkedin.com/in/iyerpranav" target="_blank">
         <img src="icons/linkedin-svgrepo-com.svg" alt="LinkedIn">
       </a>
+      <a href="mailto:iyerpranav11@gmail.com" target="_blank">
+        <img src="icons/gmail-svgrepo-com-cropped.svg" alt="LinkedIn">
+      </a>
     </section>
   </section>
 
   <hr class="separator">
 
-  <section class="technologies">
+  <section class="technologies" id="technologies">
     <h2>Technologies</h2>
     <div class="stack-grid">
       <div class="stack-item"><img src="icons/python-127-svgrepo-com.svg"></div>
@@ -353,69 +334,55 @@
 
   <hr class="separator">
 
-  <section class="projects">
+  <section class="projects" id="projects">
     <h2>My Projects</h2>
     <div class="projects-container">
+
       <div class="project">
         <img src="images/image_ffa.png" alt="Flight Network Analysis">
         <h3>Flight Network Max Flow Analysis</h3>
         <p>Analyzed maximum passenger flow using the Ford-Fulkerson algorithm. Data cleaned and merged with Python, and
           insights visualized using Tableau and Excel dashboards.</p>
-        <a href="https://github.com/iyerpranav/airline_network_ford_fulkerson">View on GitHub</a>
+        <a href="https://github.com/iyerpranav/airline_network_ford_fulkerson">View</a>
       </div>
+
       <div class="project">
         <img src="images/image_ptf.png" alt="Paper Trading Platform">
         <h3>Paper Trading Platform</h3>
-        <p>A C++ based paper trading platform for simulating stock transactions with real-time stock price updates using
+        <p>C++ based paper trading platform for simulating stock transactions with stock price updates using
           Python. Features user authentication, transaction management, and portfolio tracking.</p>
-        <a href="https://github.com/iyerpranav/paper_trading_platform">View on GitHub</a>
+        <a href="https://github.com/iyerpranav/paper_trading_platform">View</a>
       </div>
+      
+      <div class="project">
+        <img src="images/image_ffaviz.png" alt="Ford-Fulkerson Tableau Visualization">
+        <h3>Airline Network Visualization</h3>
+        <p>An interactive Tableau dashboard visualizing maximum passenger flow in a flight network using the
+          Ford-Fulkerson algorithm. (Continuation of Flight Network Max Flow Analysis)</p>
+        <a
+          href="https://public.tableau.com/app/profile/pranav.iyer4662/viz/Book2_17385041456530/Dashboard12?publish=yes">View
+        </a>
+      </div>
+
+      <div class="project">
+        <img src="images/image_cvp.png" alt="Cost-Volume-Profit analysis Tool">
+        <h3>Cost-Volume-Profit Analysis</h3>
+        <p> Built with Python, Streamlit, and Plotly, this tool provides interactive CVP and sales mix analysis,
+          including break-even, contribution margin, operating leverage, and margin of safety calculations.</p>
+        <a href="https://github.com/iyerpranav/cvp_analysis">View
+        </a>
+      </div>
+
     </div>
   </section>
 
   <hr class="separator">
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <h2>Contact</h2>
-    <p>Email: iyerpranav11@gmail.com</p>
-    <p>Phone: +91 99874 01185</p>
+    <p>Email: <a href="mailto:iyerpranav11@gmail.com">iyerpranav11@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919987401185">+91 99874 01185</a></p>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const texts = ["Data Science Student", "Cybersecurity Enthusiast", "Algorithm Developer"];
-      let textIndex = 0;
-      let charIndex = 0;
-      const typingSpeed = 100;
-      const erasingSpeed = 50;
-      const delayBetweenTexts = 1000;
-      const typingElement = document.getElementById("typing-text");
-
-      function typeText() {
-        if (charIndex < texts[textIndex].length) {
-          typingElement.innerHTML = texts[textIndex].substring(0, charIndex + 1) + `<span class="cursor"></span>`;
-          charIndex++;
-          setTimeout(typeText, typingSpeed);
-        } else {
-          setTimeout(eraseText, delayBetweenTexts);
-        }
-      }
-
-      function eraseText() {
-        if (charIndex > 0) {
-          typingElement.innerHTML = texts[textIndex].substring(0, charIndex - 1) + `<span class="cursor"></span>`;
-          charIndex--;
-          setTimeout(eraseText, erasingSpeed);
-        } else {
-          textIndex = (textIndex + 1) % texts.length;
-          setTimeout(typeText, typingSpeed);
-        }
-      }
-
-      // Start animation
-      setTimeout(typeText, typingSpeed);
-    });
-  </script>
 
   <script>
     window.addEventListener("popstate", function () {
@@ -426,7 +393,18 @@
     // Push initial state to prevent default back action
     history.pushState(null, null, location.href);
   </script>
+  <script>
+    document.querySelectorAll('.top-bar a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
 
+  </script>
 
 </body>
 
